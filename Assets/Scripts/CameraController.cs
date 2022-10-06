@@ -111,14 +111,14 @@ public class CameraController : MonoBehaviour
                     }
                     else
                     {
-                        // въебались во что то другое
+                        // hit other/ not interesting...
                         Debug.Log("Other Raycast Hit");
                         Debug.Log(objectHit.name);
                     }
                 }
             }
         }
-        // Input.GetMouseButtonUp(0) только для UI
+        // Input.GetMouseButtonUp(0) only for UI
     }
 
     public void ToggleTurn()
@@ -135,7 +135,7 @@ public class CameraController : MonoBehaviour
             curent_comand = Commands.Red;
             turn_txt.text = "Red";
             turn_txt.color = Color.red;
-            // Добавить к счётчикам красного голду и действия
+            // Add red in counter gold and actions
 
         }
         else
@@ -150,7 +150,7 @@ public class CameraController : MonoBehaviour
             curent_comand = Commands.Blue;
             turn_txt.text = "Blue";
             turn_txt.color = Color.blue;
-            // Добавить к счётчикам синего голду и действия
+            // Add blue in counter gold and actions
 
         }
         refresh_counters();

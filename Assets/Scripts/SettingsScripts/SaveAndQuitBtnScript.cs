@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +22,7 @@ public class SaveAndQuitBtnScript : MonoBehaviour
 
     private void SaveSettings()
     {
+        // save settings in static class
         SettingsParams.fulscreen = FullscreenCB.GetComponent<Toggle>().isOn;
         SettingsParams.isFPScounterActive = FPSCounter.GetComponent<Toggle>().isOn;
         SettingsParams.isDebugHudActive = DebugHUD.GetComponent<Toggle>().isOn;
@@ -40,6 +39,8 @@ public class SaveAndQuitBtnScript : MonoBehaviour
             SettingsParams.resolution = new int[2] { System.Convert.ToInt32(WidthIF.GetComponent<Text>().text), System.Convert.ToInt32(HeightIF.GetComponent<Text>().text) };
         }
 
+        // set settings
+        SetterSettings.SetSettings();
         // quit in main menu
         SceneManager.LoadScene(0);
     }
