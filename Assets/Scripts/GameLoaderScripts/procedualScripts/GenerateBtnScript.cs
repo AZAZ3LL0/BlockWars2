@@ -15,13 +15,13 @@ public class GenerateBtnScript : MonoBehaviour
     // Update is called once per frame
     void Generate()
     {
-        if (SeedInput.GetComponent<Text>().text != null)
+        if (SeedInput.GetComponent<Text>().text != "")
         {
             NoiseObj.GetComponent<GenerateNoise>().SetSeed(System.Convert.ToInt32(SeedInput.GetComponent<Text>().text));
         }
         else
         {
-            NoiseObj.GetComponent<GenerateNoise>().SetSeed(0);
+            NoiseObj.GetComponent<GenerateNoise>().SetSeed(Random.Range(0, 10000));
         }
         
         NoiseObj.GetComponent<GenerateNoise>().SetPower(LevelOfWaterObj.GetComponent<Slider>().value);
