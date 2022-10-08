@@ -8,6 +8,7 @@ public static class SettingsParams
 
     public static bool isFPScounterActive = false;
     public static int fpsMax = 144;
+    public static bool vsync = true;
 
     public static bool isDebugHudActive = false;
 

@@ -12,6 +12,7 @@ public class SaveAndQuitBtnScript : MonoBehaviour
     [SerializeField] private GameObject MaxFps;
     [SerializeField] private GameObject WidthIF;
     [SerializeField] private GameObject HeightIF;
+    [SerializeField] private GameObject VSyncCB;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class SaveAndQuitBtnScript : MonoBehaviour
         SettingsParams.fulscreen = FullscreenCB.GetComponent<Toggle>().isOn;
         SettingsParams.isFPScounterActive = FPSCounter.GetComponent<Toggle>().isOn;
         SettingsParams.isDebugHudActive = DebugHUD.GetComponent<Toggle>().isOn;
+        SettingsParams.vsync = VSyncCB.GetComponent<Toggle>().isOn;
 
         SettingsParams.musicPower = MusicSlider.GetComponent<Slider>().value;
         SettingsParams.fxPower = FXSlider.GetComponent<Slider>().value;
