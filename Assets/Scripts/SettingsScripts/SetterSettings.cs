@@ -16,7 +16,6 @@ static public class SetterSettings
             Screen.SetResolution(SettingsParams.resolution[0], SettingsParams.resolution[1], FullScreenMode.Windowed);
         }
 
-        // set sounds values
         // some staff....
     }
 }

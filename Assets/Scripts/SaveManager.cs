@@ -5,7 +5,7 @@ using SaveData;
 public static class SaveManager
 {
     // Application.persistentDataPath -> папка exeшника игры
-    private static string filepath = "C:/Users/Admin/Desktop/saves/";
+    private static string filepath = Application.streamingAssetsPath + "/saves/";
     public static void Save(BoardData data)
     {
         string jsonData = JsonUtility.ToJson(data, true);
