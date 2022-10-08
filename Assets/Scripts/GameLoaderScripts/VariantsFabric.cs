@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class VariantsFabric : MonoBehaviour
 {
     private string PATH_TO_SAVES = Application.streamingAssetsPath + "/saves";
-    private string savedgame = "\\savedgames\\";
-    private string presets = "\\presets\\";
+    private string savedgame = "/savedgames/";
+    private string presets = "/presets/";
 
     private string searchFilter = "*.json";
 
@@ -34,23 +31,23 @@ public class VariantsFabric : MonoBehaviour
         int delta = -75;
         foreach (string file in files)
         {
-            //Debug.Log(file.Split('\\')[file.Split('\\').Length - 1]);
-            //Debug.Log(file);
+            // Debug.Log(file.Split('/')[file.Split('/').Length - 1]);
+            // Debug.Log(file);
             GameObject contentBTN = Instantiate(MapToChangeExemplare, new Vector3Int(650, temp_height, 0), Quaternion.identity, PresetContent.transform);
-            contentBTN.GetComponentInChildren<VariantOfMap>().SetUp(presets + file.Split('\\')[file.Split('\\').Length - 1]);
+            contentBTN.GetComponentInChildren<VariantOfMap>().SetUp(presets + file.Split('/')[file.Split('/').Length - 1]);
 
             temp_height += delta;
 
         }
 
-        // Loads setup
+        // Loads SetUp
         temp_height = 525;
         foreach (string file in loads)
         {
             //Debug.Log(file.Split('\\')[file.Split('\\').Length - 1]);
             //Debug.Log(file);
             GameObject contentBTN = Instantiate(MapToChangeExemplare, new Vector3Int(650, temp_height, 0), Quaternion.identity, SavedContent.transform);
-            contentBTN.GetComponentInChildren<VariantOfMap>().SetUp(savedgame + file.Split('\\')[file.Split('\\').Length - 1]);
+            contentBTN.GetComponentInChildren<VariantOfMap>().SetUp(savedgame + file.Split('/')[file.Split('/').Length - 1]);
 
             temp_height += delta;
 
