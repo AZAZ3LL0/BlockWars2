@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class VariantsFabric : MonoBehaviour
 {
-    [SerializeField] private string PATH_TO_SAVES;
+    private string PATH_TO_SAVES = Application.streamingAssetsPath + "/saves";
     private string savedgame = "\\savedgames\\";
     private string presets = "\\presets\\";
+
+    private string searchFilter = "*.json";
 
     [SerializeField] private GameObject MapToChangeExemplare;
 
@@ -19,8 +21,9 @@ public class VariantsFabric : MonoBehaviour
     public string[] loads;
     void Start()
     {
-        files = Directory.GetFiles(PATH_TO_SAVES + presets);
-        loads = Directory.GetFiles(PATH_TO_SAVES + savedgame);
+        // Debug.Log(PATH_TO_SAVES + presets);
+        files = Directory.GetFiles(PATH_TO_SAVES + presets, searchFilter);
+        loads = Directory.GetFiles(PATH_TO_SAVES + savedgame, searchFilter);
         CreateContent();
     }
 
